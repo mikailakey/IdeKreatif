@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$notification = $_SESSION['notification'] ?? null;
+if ($notification) {
+  unset($_SESSION['notification']);
+}
+if (isset($_SESSION["username"]) || isset($_SESSION))
+$_SESSION['notificationn'] = [
+  'type' => 'danger',
+  'message' => 'Silahkan Logout Terlebih Dahulu!'
+];
+header('Location:../dashboard.php');
+
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
